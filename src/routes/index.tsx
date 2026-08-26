@@ -308,7 +308,7 @@ function Index() {
         <section className="border-t border-border/60 px-6 py-20">
           <div className="mx-auto max-w-6xl">
             <h2 className="text-3xl font-bold">Certifications &amp; Education</h2>
-            <div className="mt-10 grid gap-4 sm:grid-cols-2">
+            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               <div className="surface-card flex gap-4 p-6">
                 <BadgeCheck className="size-5 shrink-0 text-primary" />
                 <div>
@@ -319,8 +319,22 @@ function Index() {
               <div className="surface-card flex gap-4 p-6">
                 <GraduationCap className="size-5 shrink-0 text-primary" />
                 <div>
-                  <h3 className="text-base font-semibold">BA Degrees</h3>
-                  <p className="mt-1 text-sm text-muted-foreground">IGNOU &amp; NIOS</p>
+                  <h3 className="text-base font-semibold">BA Degree (Pursuing)</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">IGNOU</p>
+                </div>
+              </div>
+              <div className="surface-card flex gap-4 p-6">
+                <GraduationCap className="size-5 shrink-0 text-primary" />
+                <div>
+                  <h3 className="text-base font-semibold">Senior Secondary (12th)</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">NIOS · 2023–2024</p>
+                </div>
+              </div>
+              <div className="surface-card flex gap-4 p-6">
+                <GraduationCap className="size-5 shrink-0 text-primary" />
+                <div>
+                  <h3 className="text-base font-semibold">Higher Secondary (10th)</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">NIOS · 2019–2020</p>
                 </div>
               </div>
             </div>
