@@ -25,7 +25,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -61,45 +60,6 @@ const skills = [
   { icon: FileSearch, title: "On-Page SEO", desc: "Titles, metas, internal links and content depth." },
   { icon: Sparkles, title: "AIO / GEO", desc: "Optimising for AI overviews and generative engines." },
   { icon: Brain, title: "NLP Optimization", desc: "Entity coverage and natural language relevance." },
-];
-
-const projects = [
-  {
-    name: "Local Service Site — Organic Growth Rebuild",
-    tag: "On-Page + Technical",
-    overview:
-      "A regional service business with thin, duplicated pages and no clear keyword targeting. I audited the full site independently, mapped every URL to a single search intent and rebuilt the on-page layer.",
-    strategy: [
-      "Full keyword research split by intent: informational, commercial and local.",
-      "Keyword mapping sheet so no two pages competed for the same query.",
-      "Rewrote titles, metas and H1–H3 structure with NLP-driven entity coverage.",
-      "Fixed canonical tags and consolidated duplicate service pages.",
-    ],
-    results: [
-      ["Indexed pages", "+38%"],
-      ["Avg. position", "24 → 11"],
-      ["Impressions (90d)", "+2.1x"],
-      ["Duplicate URLs", "-27"],
-    ],
-  },
-  {
-    name: "Content Hub — Topic Cluster & AI Search Test",
-    tag: "Clustering + AIO/GEO",
-    overview:
-      "A blog publishing scattered posts with no structure. I designed a pillar-and-cluster model and ran a hands-on test on how content gets surfaced in AI overviews and generative answers.",
-    strategy: [
-      "Built 4 pillar topics with supporting cluster articles and internal link paths.",
-      "Structured answers, FAQs and schema for AI overview eligibility.",
-      "Tracked query-level movement in Search Console before and after rollout.",
-      "Iterated headings and summaries based on which passages were cited.",
-    ],
-    results: [
-      ["Clicks (90d)", "+64%"],
-      ["Ranking keywords", "+180"],
-      ["AI overview picks", "9 queries"],
-      ["Avg. session depth", "+1.4 pages"],
-    ],
-  },
 ];
 
 const contactSchema = z.object({
@@ -168,6 +128,16 @@ function ContactForm() {
   );
 }
 
+function SectionHeading({ eyebrow, title }: { eyebrow: string; title: string }) {
+  return (
+    <div>
+      <p className="text-xs font-medium tracking-[0.2em] text-primary uppercase">{eyebrow}</p>
+      <h2 className="mt-3 font-display text-3xl font-semibold sm:text-4xl">{title}</h2>
+      <div className="mt-5 h-px w-16 bg-primary/60" />
+    </div>
+  );
+}
+
 function Index() {
   return (
     <div className="min-h-screen">
@@ -216,7 +186,7 @@ function Index() {
         {/* About */}
         <section id="about" className="border-t border-border/60 px-6 py-20">
           <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-[0.8fr_1.2fr]">
-            <h2 className="text-3xl font-bold">About Me</h2>
+            <SectionHeading eyebrow="01 — About" title="About Me" />
             <div className="space-y-5 text-muted-foreground">
               <p>
                 I'm an SEO practitioner based in <span className="text-foreground">Dehradun, Uttarakhand</span>,
@@ -241,7 +211,7 @@ function Index() {
         {/* Skills */}
         <section id="skills" className="border-t border-border/60 px-6 py-20">
           <div className="mx-auto max-w-6xl">
-            <h2 className="text-3xl font-bold">Skills &amp; Tools</h2>
+            <SectionHeading eyebrow="02 — Expertise" title="Skills &amp; Tools" />
             <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {skills.map((s) => (
                 <div
@@ -260,54 +230,21 @@ function Index() {
         {/* Projects */}
         <section id="projects" className="border-t border-border/60 px-6 py-20">
           <div className="mx-auto max-w-6xl">
-            <h2 className="text-3xl font-bold">Projects &amp; Case Studies</h2>
-            <div className="mt-10 grid gap-6 lg:grid-cols-2">
-              {projects.map((p) => (
-                <article key={p.name} className="surface-card p-6">
-                  <span className="text-xs font-medium tracking-wider text-primary uppercase">
-                    {p.tag}
-                  </span>
-                  <h3 className="mt-2 text-xl font-semibold">{p.name}</h3>
-                  <Tabs defaultValue="overview" className="mt-5">
-                    <TabsList className="w-full">
-                      <TabsTrigger value="overview" className="flex-1">Overview</TabsTrigger>
-                      <TabsTrigger value="strategy" className="flex-1">Strategy Applied</TabsTrigger>
-                      <TabsTrigger value="results" className="flex-1">Results</TabsTrigger>
-                    </TabsList>
-                    <TabsContent value="overview" className="mt-4 text-sm text-muted-foreground">
-                      {p.overview}
-                    </TabsContent>
-                    <TabsContent value="strategy" className="mt-4">
-                      <ul className="space-y-2.5 text-sm text-muted-foreground">
-                        {p.strategy.map((s) => (
-                          <li key={s} className="flex gap-2.5">
-                            <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
-                            {s}
-                          </li>
-                        ))}
-                      </ul>
-                    </TabsContent>
-                    <TabsContent value="results" className="mt-4">
-                      <div className="grid grid-cols-2 gap-3">
-                        {p.results.map(([label, value]) => (
-                          <div key={label} className="rounded-lg bg-secondary/60 p-4">
-                            <div className="font-display text-xl font-bold text-primary">{value}</div>
-                            <div className="mt-1 text-xs text-muted-foreground">{label}</div>
-                          </div>
-                        ))}
-                      </div>
-                    </TabsContent>
-                  </Tabs>
-                </article>
-              ))}
+            <SectionHeading eyebrow="03 — Work" title="Projects &amp; Case Studies" />
+            <div className="mt-10 max-w-xl">
+              <article className="surface-card p-7">
+                <FileSearch className="size-5 text-primary" />
+                <h3 className="mt-4 text-xl font-semibold">Meta Description</h3>
+              </article>
             </div>
           </div>
         </section>
 
+
         {/* Certifications */}
         <section className="border-t border-border/60 px-6 py-20">
           <div className="mx-auto max-w-6xl">
-            <h2 className="text-3xl font-bold">Certifications &amp; Education</h2>
+            <SectionHeading eyebrow="04 — Credentials" title="Certifications &amp; Education" />
             <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               <div className="surface-card flex gap-4 p-6">
                 <BadgeCheck className="size-5 shrink-0 text-primary" />
@@ -347,8 +284,8 @@ function Index() {
         <section id="contact" className="border-t border-border/60 px-6 py-20">
           <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-[0.8fr_1.2fr]">
             <div>
-              <h2 className="text-3xl font-bold">Get in Touch</h2>
-              <p className="mt-4 text-sm text-muted-foreground">
+              <SectionHeading eyebrow="05 — Contact" title="Get in Touch" />
+              <p className="mt-6 text-sm text-muted-foreground">
                 Open to SEO roles, freelance audits and collaborations.
               </p>
               <ul className="mt-8 space-y-4 text-sm">
