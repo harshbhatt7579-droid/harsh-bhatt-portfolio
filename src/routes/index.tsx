@@ -319,8 +319,10 @@ function Index() {
               <div className="surface-card flex gap-4 p-6">
                 <GraduationCap className="size-5 shrink-0 text-primary" />
                 <div>
-                  <h3 className="text-base font-semibold">BA Degree (Pursuing)</h3>
-                  <p className="mt-1 text-sm text-muted-foreground">IGNOU</p>
+                  <h3 className="text-base font-semibold">Bachelor of Arts (Multidisciplinary)</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    Undergraduate · IGNOU · June 2024–June 2027 (Expected)
+                  </p>
                 </div>
               </div>
               <div className="surface-card flex gap-4 p-6">
