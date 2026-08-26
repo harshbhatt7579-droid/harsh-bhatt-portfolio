@@ -260,49 +260,16 @@ function Index() {
         {/* Projects */}
         <section id="projects" className="border-t border-border/60 px-6 py-20">
           <div className="mx-auto max-w-6xl">
-            <h2 className="text-3xl font-bold">Projects &amp; Case Studies</h2>
-            <div className="mt-10 grid gap-6 lg:grid-cols-2">
-              {projects.map((p) => (
-                <article key={p.name} className="surface-card p-6">
-                  <span className="text-xs font-medium tracking-wider text-primary uppercase">
-                    {p.tag}
-                  </span>
-                  <h3 className="mt-2 text-xl font-semibold">{p.name}</h3>
-                  <Tabs defaultValue="overview" className="mt-5">
-                    <TabsList className="w-full">
-                      <TabsTrigger value="overview" className="flex-1">Overview</TabsTrigger>
-                      <TabsTrigger value="strategy" className="flex-1">Strategy Applied</TabsTrigger>
-                      <TabsTrigger value="results" className="flex-1">Results</TabsTrigger>
-                    </TabsList>
-                    <TabsContent value="overview" className="mt-4 text-sm text-muted-foreground">
-                      {p.overview}
-                    </TabsContent>
-                    <TabsContent value="strategy" className="mt-4">
-                      <ul className="space-y-2.5 text-sm text-muted-foreground">
-                        {p.strategy.map((s) => (
-                          <li key={s} className="flex gap-2.5">
-                            <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
-                            {s}
-                          </li>
-                        ))}
-                      </ul>
-                    </TabsContent>
-                    <TabsContent value="results" className="mt-4">
-                      <div className="grid grid-cols-2 gap-3">
-                        {p.results.map(([label, value]) => (
-                          <div key={label} className="rounded-lg bg-secondary/60 p-4">
-                            <div className="font-display text-xl font-bold text-primary">{value}</div>
-                            <div className="mt-1 text-xs text-muted-foreground">{label}</div>
-                          </div>
-                        ))}
-                      </div>
-                    </TabsContent>
-                  </Tabs>
-                </article>
-              ))}
+            <SectionHeading eyebrow="03 — Work" title="Projects &amp; Case Studies" />
+            <div className="mt-10 max-w-xl">
+              <article className="surface-card p-7">
+                <FileSearch className="size-5 text-primary" />
+                <h3 className="mt-4 text-xl font-semibold">Meta Description</h3>
+              </article>
             </div>
           </div>
         </section>
+
 
         {/* Certifications */}
         <section className="border-t border-border/60 px-6 py-20">
