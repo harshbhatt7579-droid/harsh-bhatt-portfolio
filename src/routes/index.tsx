@@ -234,7 +234,7 @@ function Index() {
             <div className="mt-10 max-w-xl">
               <article className="surface-card p-7">
                 <FileSearch className="size-5 text-primary" />
-                <h3 className="mt-4 text-xl font-semibold">Meta Description</h3>
+                <h3 className="mt-4 text-xl font-semibold">Meta Title &amp; Description</h3>
               </article>
             </div>
           </div>
