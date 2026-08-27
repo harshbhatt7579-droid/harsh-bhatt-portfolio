@@ -261,11 +261,10 @@ function Index() {
                   <div className="mt-4 rounded-lg border border-border/50 bg-card/60 p-4">
                     <p className="text-xs text-muted-foreground">https://www.ekostay.com</p>
                     <p className="mt-1 text-base font-medium text-silver">
-                      EkoStay: Book Luxury Villas &amp; Private Pool Properties Online in India
+                      EkoStay
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      gift-icon THE GREAT GETAWAY SALE IS LIVE! FLAT 26% OFF. Book properties at
-                      EkoStay and get FLAT 26% OFF on your booking. Book now…
+                     Flat 26% off on all properties.gift-icon The Great Getaway sale.Flat 26% OFF on All PROPERTIES. click to call 
                     </p>
                   </div>
                   <ul className="mt-4 space-y-1.5 text-sm text-muted-foreground">
@@ -408,13 +407,13 @@ function Index() {
               </p>
               <ul className="mt-8 space-y-4 text-sm">
                 <li>
-                  <a href="tel:+917302952577" className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-primary">
-                    <Phone className="size-4 text-primary" /> 7***********
+                  <a href="tel:+91" className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-primary">
+                    <Phone className="size-4 text-primary" /> tel
                   </a>
                 </li>
                 <li>
                   <a href="mailto:harshbhatt7579@gmail.com" className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-primary">
-                    <Mail className="size-4 text-primary" /> h********************
+                    <Mail className="size-4 text-primary" /> mail
                   </a>
                 </li>
                 <li className="flex items-center gap-3 text-muted-foreground">
