@@ -110,21 +110,26 @@ function ContactForm() {
           />
         </div>
       </div>
-      <div className="space-y-2">
-        <Label htmlFor="message">Message</Label>
-        <Textarea
-          id="message"
-          rows={5}
-          maxLength={1000}
-          value={values.message}
-          onChange={(e) => setValues({ ...values, message: e.target.value })}
-          placeholder="Tell me about your site and what you'd like to rank for."
-        />
-      </div>
-      <Button type="submit" variant="hero" size="lg" className="w-full sm:w-auto">
-        Send message
-      </Button>
-    </form>
+    <form action="https://api.web3forms.com/submit" method="POST" className="space-y-4">
+  <input type="hidden" name="access_key" value="f4f1e600-5878-4751-9277-6b67e08f3e5e" />
+
+  <div className="space-y-2">
+    <Label htmlFor="message">Message</Label>
+    <Textarea
+      id="message"
+      name="message"
+      rows={5}
+      maxLength={1000}
+      value={values.message}
+      onChange={(e) => setValues({ ...values, message: e.target.value })}
+      placeholder="Tell me about your site and what you'd like to rank for."
+    />
+  </div>
+
+  <Button type="submit" variant="hero" size="lg" className="w-full sm:w-auto">
+    Send message
+  </Button>
+</form>
   );
 }
 
@@ -408,7 +413,7 @@ function Index() {
               <ul className="mt-8 space-y-4 text-sm">
                 <li>
                   <a href="tel:+91" className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-primary">
-                    <Phone className="size-4 text-primary" /> tel
+                    <Phone className="size-4 text-primary" />
                   </a>
                 </li>
                 <li>
