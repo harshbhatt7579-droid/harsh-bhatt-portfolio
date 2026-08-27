@@ -231,62 +231,57 @@ function Index() {
         <section id="projects" className="border-t border-border/60 px-6 py-20">
           <div className="mx-auto max-w-6xl">
             <SectionHeading eyebrow="03 — Work" title="Projects &amp; Case Studies" />
-            <div className="mt-10 grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
-              <article className="surface-card p-7">
+
+            <div className="surface-card mt-10 p-7">
+              <div className="flex flex-wrap items-center justify-between gap-4">
                 <div className="flex items-center gap-3">
                   <FileSearch className="size-5 text-primary" />
-                  <span className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+                  <span className="text-xs font-medium tracking-[0.18em] text-muted-foreground uppercase">
                     Case Study · EkoStay
                   </span>
                 </div>
-                <h3 className="mt-4 text-xl font-semibold">Meta Title &amp; Description</h3>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Personal SEO research &amp; title tag assessment for EkoStay, a luxury villa
-                  rental platform — evaluating keyword intent, user incentives and SERP structural
-                  alignment for high-intent travel queries.
-                </p>
+                <span className="rounded-full border border-silver/30 px-3 py-1 text-[11px] tracking-wide text-silver uppercase">
+                  Personal SEO research
+                </span>
+              </div>
 
-                <div className="mt-6 space-y-5 text-sm">
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">
-                      Strategic focus
-                    </p>
-                    <ul className="mt-2 space-y-1.5 text-muted-foreground">
-                      <li>Theoretical title framework built on semantic search patterns and transactional intent.</li>
-                      <li>Direct CTA (“Book”) paired with a value hook (“Flat 26% Off”).</li>
-                      <li>Modeled at 52 characters to study zero-truncation display across devices.</li>
-                    </ul>
-                  </div>
+              <h3 className="mt-4 text-xl font-semibold sm:text-2xl">Meta Title &amp; Description</h3>
+              <p className="mt-2 max-w-3xl text-sm text-muted-foreground">
+                A self-initiated title tag and meta description assessment for EkoStay, a luxury
+                villa rental platform — evaluating keyword intent, user incentives and SERP
+                structural alignment for high-intent travel queries.
+              </p>
 
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">
-                      Meta description assessment
-                    </p>
-                    <ul className="mt-2 space-y-1.5 text-muted-foreground">
-                      <li>Initial snippet had a broken element (gift-icon), ALL CAPS and “Flat 26% Off” repeated twice.</li>
-                      <li>Cleaned to sentence case, replaced “properties” with “luxury private villas with pools”.</li>
-                      <li>Kept under 150 characters with dual CTA — reserve online or call.</li>
-                    </ul>
-                  </div>
-
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">
-                      Technical alignment
-                    </p>
-                    <ul className="mt-2 space-y-1.5 text-muted-foreground">
-                      <li>Clear Intent + Benefit + Brand boundaries for NLP entity recognition.</li>
-                      <li>Readable, scannable formatting for both users and crawlers.</li>
-                    </ul>
-                  </div>
-                </div>
-              </article>
-
-              <aside className="surface-card flex flex-col gap-6 p-7">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-                    Proposed SERP preview
+              {/* Before / After SERP previews */}
+              <div className="mt-8 grid gap-5 lg:grid-cols-2">
+                <div className="rounded-xl border border-border/60 bg-background/50 p-5">
+                  <p className="text-[11px] font-semibold tracking-[0.18em] text-muted-foreground uppercase">
+                    Before — original snippet
                   </p>
-                  <div className="mt-3 rounded-lg border border-border/60 bg-background/60 p-4">
+                  <div className="mt-4 rounded-lg border border-border/50 bg-card/60 p-4">
+                    <p className="text-xs text-muted-foreground">https://www.ekostay.com</p>
+                    <p className="mt-1 text-base font-medium text-silver">
+                      EkoStay: Book Luxury Villas &amp; Private Pool Properties Online in India
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      gift-icon THE GREAT GETAWAY SALE IS LIVE! FLAT 26% OFF. Book properties at
+                      EkoStay and get FLAT 26% OFF on your booking. Book now…
+                    </p>
+                  </div>
+                  <ul className="mt-4 space-y-1.5 text-sm text-muted-foreground">
+                    <li>Broken code element rendering as text (gift-icon).</li>
+                    <li>Aggressive ALL CAPS reducing readability.</li>
+                    <li>“FLAT 26% OFF” repeated twice, wasting characters.</li>
+                    <li>Generic term “properties” with weak entity signal.</li>
+                    <li>Long title at risk of truncation on mobile.</li>
+                  </ul>
+                </div>
+
+                <div className="rounded-xl border border-primary/40 bg-primary/5 p-5">
+                  <p className="text-[11px] font-semibold tracking-[0.18em] text-primary uppercase">
+                    After — proposed snippet
+                  </p>
+                  <div className="mt-4 rounded-lg border border-border/50 bg-card/60 p-4">
                     <p className="text-xs text-muted-foreground">https://www.ekostay.com</p>
                     <p className="mt-1 text-base font-medium text-primary">
                       Book Private Villa with Pool: Flat 26% Off | EkoStay
@@ -296,27 +291,72 @@ function Index() {
                       EkoStay and get a flat 26% off. Reserve online or call +91 8169019090.
                     </p>
                   </div>
+                  <ul className="mt-4 space-y-1.5 text-sm text-muted-foreground">
+                    <li>Direct CTA (“Book”) plus a value hook (“Flat 26% Off”).</li>
+                    <li>Sentence case, clean and professional presentation.</li>
+                    <li>“Luxury private villas with pools” as a precise entity.</li>
+                    <li>Dual CTA — reserve online or call.</li>
+                    <li>52-char title, description under 150 — zero truncation.</li>
+                  </ul>
                 </div>
+              </div>
 
-                <div className="grid grid-cols-2 gap-3 text-sm">
-                  <div className="rounded-lg border border-border/60 p-4">
-                    <p className="text-lg font-semibold">52</p>
-                    <p className="text-xs text-muted-foreground">Title characters</p>
+              {/* Metrics */}
+              <div className="mt-6 grid gap-3 sm:grid-cols-4">
+                {[
+                  { v: "52", l: "Title characters" },
+                  { v: "<150", l: "Description characters" },
+                  { v: "0", l: "Broken elements left" },
+                  { v: "2", l: "Conversion paths" },
+                ].map((m) => (
+                  <div key={m.l} className="rounded-lg border border-border/60 p-4">
+                    <p className="text-lg font-semibold text-primary">{m.v}</p>
+                    <p className="text-xs text-muted-foreground">{m.l}</p>
                   </div>
-                  <div className="rounded-lg border border-border/60 p-4">
-                    <p className="text-lg font-semibold">&lt;150</p>
-                    <p className="text-xs text-muted-foreground">Description characters</p>
-                  </div>
+                ))}
+              </div>
+
+              {/* Detail columns */}
+              <div className="mt-8 grid gap-6 border-t border-border/60 pt-8 text-sm sm:grid-cols-3">
+                <div>
+                  <p className="text-xs font-semibold tracking-[0.14em] text-primary uppercase">
+                    Strategic focus
+                  </p>
+                  <ul className="mt-2 space-y-1.5 text-muted-foreground">
+                    <li>Theoretical title framework built on semantic search patterns.</li>
+                    <li>Transactional intent matched to accommodation requirements.</li>
+                    <li>Value-based hook tested against competing SERP listings.</li>
+                  </ul>
                 </div>
+                <div>
+                  <p className="text-xs font-semibold tracking-[0.14em] text-primary uppercase">
+                    Execution
+                  </p>
+                  <ul className="mt-2 space-y-1.5 text-muted-foreground">
+                    <li>Technical cleanup of broken text and casing.</li>
+                    <li>Entity-specific rewrite of the core offering.</li>
+                    <li>Promotional hook consolidated into one mention.</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold tracking-[0.14em] text-primary uppercase">
+                    Technical alignment
+                  </p>
+                  <ul className="mt-2 space-y-1.5 text-muted-foreground">
+                    <li>Clear Intent + Benefit + Brand boundaries for NLP parsing.</li>
+                    <li>Readable, scannable formatting for users and crawlers.</li>
+                    <li>Display thresholds respected across mobile and desktop.</li>
+                  </ul>
+                </div>
+              </div>
 
-                <p className="text-xs text-muted-foreground">
-                  Self-initiated research exercise. No client performance data is claimed.
-                </p>
-              </aside>
+              <p className="mt-6 text-xs text-muted-foreground">
+                Self-initiated research exercise. No client performance data is claimed.
+              </p>
             </div>
-
           </div>
         </section>
+
 
 
         {/* Certifications */}
