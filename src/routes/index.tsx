@@ -264,7 +264,7 @@ function Index() {
                       EkoStay
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                     Flat 26% off on all properties.gift-icon The Great Getaway sale.Flat 26% OFF on All PROPERTIES. click to call 
+                     Flat 26% off on all properties.gift-icon The Great Getaway sale.Flat 26% OFF on All PROPERTIES. click to call +91 8169019090. 
                     </p>
                   </div>
                   <ul className="mt-4 space-y-1.5 text-sm text-muted-foreground">
