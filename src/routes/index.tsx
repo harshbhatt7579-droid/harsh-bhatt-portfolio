@@ -234,7 +234,7 @@ function Index() {
             <div className="mt-10 max-w-xl">
               <article className="surface-card p-7">
                 <FileSearch className="size-5 text-primary" />
-                <h3 className="mt-4 text-xl font-semibold">Meta Description</h3>
+                <h3 className="mt-4 text-xl font-semibold">Meta Title &amp; Description</h3>
               </article>
             </div>
           </div>
@@ -291,12 +291,12 @@ function Index() {
               <ul className="mt-8 space-y-4 text-sm">
                 <li>
                   <a href="tel:+917302952577" className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-primary">
-                    <Phone className="size-4 text-primary" /> 7302952577
+                    <Phone className="size-4 text-primary" /> 7***********
                   </a>
                 </li>
                 <li>
                   <a href="mailto:harshbhatt7579@gmail.com" className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-primary">
-                    <Mail className="size-4 text-primary" /> harshbhatt7579@gmail.com
+                    <Mail className="size-4 text-primary" /> h********************
                   </a>
                 </li>
                 <li className="flex items-center gap-3 text-muted-foreground">
