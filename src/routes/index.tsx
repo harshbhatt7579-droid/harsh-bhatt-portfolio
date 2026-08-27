@@ -231,12 +231,90 @@ function Index() {
         <section id="projects" className="border-t border-border/60 px-6 py-20">
           <div className="mx-auto max-w-6xl">
             <SectionHeading eyebrow="03 — Work" title="Projects &amp; Case Studies" />
-            <div className="mt-10 max-w-xl">
+            <div className="mt-10 grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
               <article className="surface-card p-7">
-                <FileSearch className="size-5 text-primary" />
+                <div className="flex items-center gap-3">
+                  <FileSearch className="size-5 text-primary" />
+                  <span className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+                    Case Study · EkoStay
+                  </span>
+                </div>
                 <h3 className="mt-4 text-xl font-semibold">Meta Title &amp; Description</h3>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Personal SEO research &amp; title tag assessment for EkoStay, a luxury villa
+                  rental platform — evaluating keyword intent, user incentives and SERP structural
+                  alignment for high-intent travel queries.
+                </p>
+
+                <div className="mt-6 space-y-5 text-sm">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">
+                      Strategic focus
+                    </p>
+                    <ul className="mt-2 space-y-1.5 text-muted-foreground">
+                      <li>Theoretical title framework built on semantic search patterns and transactional intent.</li>
+                      <li>Direct CTA (“Book”) paired with a value hook (“Flat 26% Off”).</li>
+                      <li>Modeled at 52 characters to study zero-truncation display across devices.</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">
+                      Meta description assessment
+                    </p>
+                    <ul className="mt-2 space-y-1.5 text-muted-foreground">
+                      <li>Initial snippet had a broken element (gift-icon), ALL CAPS and “Flat 26% Off” repeated twice.</li>
+                      <li>Cleaned to sentence case, replaced “properties” with “luxury private villas with pools”.</li>
+                      <li>Kept under 150 characters with dual CTA — reserve online or call.</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">
+                      Technical alignment
+                    </p>
+                    <ul className="mt-2 space-y-1.5 text-muted-foreground">
+                      <li>Clear Intent + Benefit + Brand boundaries for NLP entity recognition.</li>
+                      <li>Readable, scannable formatting for both users and crawlers.</li>
+                    </ul>
+                  </div>
+                </div>
               </article>
+
+              <aside className="surface-card flex flex-col gap-6 p-7">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+                    Proposed SERP preview
+                  </p>
+                  <div className="mt-3 rounded-lg border border-border/60 bg-background/60 p-4">
+                    <p className="text-xs text-muted-foreground">https://www.ekostay.com</p>
+                    <p className="mt-1 text-base font-medium text-primary">
+                      Book Private Villa with Pool: Flat 26% Off | EkoStay
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      The Great Getaway Sale is live! Book luxury private villas with pools at
+                      EkoStay and get a flat 26% off. Reserve online or call +91 8169019090.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-3 text-sm">
+                  <div className="rounded-lg border border-border/60 p-4">
+                    <p className="text-lg font-semibold">52</p>
+                    <p className="text-xs text-muted-foreground">Title characters</p>
+                  </div>
+                  <div className="rounded-lg border border-border/60 p-4">
+                    <p className="text-lg font-semibold">&lt;150</p>
+                    <p className="text-xs text-muted-foreground">Description characters</p>
+                  </div>
+                </div>
+
+                <p className="text-xs text-muted-foreground">
+                  Self-initiated research exercise. No client performance data is claimed.
+                </p>
+              </aside>
             </div>
+
           </div>
         </section>
 
