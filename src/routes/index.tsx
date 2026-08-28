@@ -86,16 +86,20 @@ function ContactForm() {
   };
 
   return (
-    <form onSubmit={onSubmit} className="surface-card space-y-4 p-6">
+    <form action="https://api.web3forms.com/submit" method="POST" className="surface-card space-y-4 p-6">
+      <input type="hidden" name="access_key" value="f4f1e600-5878-4751-9277-6b67e08f3e5e" />
+
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="space-y-2">
           <Label htmlFor="name">Name</Label>
           <Input
             id="name"
+            name="name"
             value={values.name}
             maxLength={100}
             onChange={(e) => setValues({ ...values, name: e.target.value })}
             placeholder="Your name"
+            required
           />
         </div>
         <div className="space-y-2">
@@ -103,33 +107,34 @@ function ContactForm() {
           <Input
             id="email"
             type="email"
+            name="email"
             value={values.email}
             maxLength={255}
             onChange={(e) => setValues({ ...values, email: e.target.value })}
             placeholder="you@company.com"
+            required
           />
         </div>
       </div>
-    <form action="https://api.web3forms.com/submit" method="POST" className="space-y-4">
-  <input type="hidden" name="access_key" value="f4f1e600-5878-4751-9277-6b67e08f3e5e" />
 
-  <div className="space-y-2">
-    <Label htmlFor="message">Message</Label>
-    <Textarea
-      id="message"
-      name="message"
-      rows={5}
-      maxLength={1000}
-      value={values.message}
-      onChange={(e) => setValues({ ...values, message: e.target.value })}
-      placeholder="Tell me about your site and what you'd like to rank for."
-    />
-  </div>
+      <div className="space-y-2">
+        <Label htmlFor="message">Message</Label>
+        <Textarea
+          id="message"
+          name="message"
+          rows={5}
+          maxLength={1000}
+          value={values.message}
+          onChange={(e) => setValues({ ...values, message: e.target.value })}
+          placeholder="Tell me about your site and what you'd like to rank for."
+          required
+        />
+      </div>
 
-  <Button type="submit" variant="hero" size="lg" className="w-full sm:w-auto">
-    Send message
-  </Button>
-</form>
+      <Button type="submit" variant="hero" size="lg" className="w-full sm:w-auto">
+        Send message
+      </Button>
+    </form>
   );
 }
 
@@ -418,7 +423,7 @@ function Index() {
                 </li>
                 <li>
                   <a href="mailto:harshbhatt7579@gmail.com" className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-primary">
-                    <Mail className="size-4 text-primary" /> mail
+                    <Mail className="size-4 text-primary" /> 
                   </a>
                 </li>
                 <li className="flex items-center gap-3 text-muted-foreground">
