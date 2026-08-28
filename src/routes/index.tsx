@@ -187,20 +187,17 @@ function Index() {
     <div className="min-h-screen">
       <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur">
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <motion.span
-            className="font-display text-sm font-bold tracking-widest uppercase"
-            variants={fadeIn}
+          <motion.div
             initial="initial"
             animate="animate"
           >
-            Harsh<span className="text-primary">.</span>Bhatt
-          </motion.span>
-          <div className="hidden gap-8 text-sm text-muted-foreground sm:flex">
-            <a href="#about" className="transition-colors hover:text-primary">About</a>
-            <a href="#skills" className="transition-colors hover:text-primary">Skills</a>
-            <a href="#projects" className="transition-colors hover:text-primary">Projects</a>
-            <a href="#contact" className="transition-colors hover:text-primary">Contact</a>
-          </div>
+            <div className="hidden gap-8 text-sm text-muted-foreground sm:flex">
+              <a href="#about" className="transition-colors hover:text-primary">About</a>
+              <a href="#skills" className="transition-colors hover:text-primary">Skills</a>
+              <a href="#projects" className="transition-colors hover:text-primary">Projects</a>
+              <a href="#contact" className="transition-colors hover:text-primary">Contact</a>
+            </div>
+          </motion.div>
         </nav>
       </header>
 
