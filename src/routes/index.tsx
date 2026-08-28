@@ -44,6 +44,9 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "profile" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [
+      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+    ],
   }),
   component: Index,
 });
@@ -70,59 +73,6 @@ const contactSchema = z.object({
 
 function ContactForm() {
   const [values, setValues] = useState({ name: "", email: "", message: "" });
-
- return (
-    <form action="https://api.web3forms.com/submit" method="POST" className="surface-card space-y-4 p-6">
-      <input type="hidden" name="access_key" value="f4f1e600-5878-4751-9277-6b67e08f3e5e" />
-
-      <div className="grid gap-4 sm:grid-cols-2">
-        <div className="space-y-2">
-          <Label htmlFor="name">Name</Label>
-          <Input
-            id="name"
-            name="name"
-            value={values.name}
-            maxLength={100}
-            onChange={(e) => setValues({ ...values, name: e.target.value })}
-            placeholder="Your name"
-            required
-          />
-        </div>
-        <div className="space-y-2">
-          <Label htmlFor="email">Email</Label>
-          <Input
-            id="email"
-            type="email"
-            name="email"
-            value={values.email}
-            maxLength={255}
-            onChange={(e) => setValues({ ...values, email: e.target.value })}
-            placeholder="you@company.com"
-            required
-          />
-        </div>
-      </div>
-
-      <div className="space-y-2">
-        <Label htmlFor="message">Message</Label>
-        <Textarea
-          id="message"
-          name="message"
-          rows={5}
-          maxLength={1000}
-          value={values.message}
-          onChange={(e) => setValues({ ...values, message: e.target.value })}
-          placeholder="Let's get in touch for SEO roles or projects."
-          required
-        />
-      </div>
-
-      <Button type="submit" variant="hero" size="lg" className="w-full sm:w-auto">
-        Send message
-      </Button>
-    </form>
-  );
-}
 
   return (
     <form action="https://api.web3forms.com/submit" method="POST" className="surface-card space-y-4 p-6">
@@ -319,8 +269,8 @@ function Index() {
                   <ul className="mt-4 space-y-1.5 text-sm text-muted-foreground">
                     <li>Broken code element rendering as text (gift-icon).</li>
                     <li>Aggressive ALL CAPS reducing readability.</li>
-                    <li>“FLAT 26% OFF” repeated twice, wasting characters.</li>
-                    <li>Generic term “properties” with weak entity signal.</li>
+                    <li>"FLAT 26% OFF" repeated twice, wasting characters.</li>
+                    <li>Generic term "properties" with weak entity signal.</li>
                     <li>Long title at risk of truncation on mobile.</li>
                   </ul>
                 </div>
@@ -340,9 +290,9 @@ function Index() {
                     </p>
                   </div>
                   <ul className="mt-4 space-y-1.5 text-sm text-muted-foreground">
-                    <li>Direct CTA (“Book”) plus a value hook (“Flat 26% Off”).</li>
+                    <li>Direct CTA ("Book") plus a value hook ("Flat 26% Off").</li>
                     <li>Sentence case, clean and professional presentation.</li>
-                    <li>“Luxury private villas with pools” as a precise entity.</li>
+                    <li>"Luxury private villas with pools" as a precise entity.</li>
                     <li>Dual CTA — reserve online or call.</li>
                     <li>52-char title, description under 150 — zero truncation.</li>
                   </ul>
