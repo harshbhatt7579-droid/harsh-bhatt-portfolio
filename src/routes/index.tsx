@@ -112,7 +112,7 @@ function ContactForm() {
           maxLength={1000}
           value={values.message}
           onChange={(e) => setValues({ ...values, message: e.target.value })}
-          placeholder="Tell me about your site and what you'd like to rank for."
+          placeholder="Let's get in touch for SEO roles or projects."
           required
         />
       </div>
