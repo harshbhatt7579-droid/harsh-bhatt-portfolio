@@ -402,7 +402,7 @@ function Index() {
             <div>
               <SectionHeading eyebrow="05 — Contact" title="Get in Touch" />
               <p className="mt-6 text-sm text-muted-foreground">
-               Eager to join a growth-focused team as a full-time SEO Specialist.
+               Eager to join a growth-focused team as a full-time SEO Executive.
               </p>
               <ul className="mt-8 space-y-4 text-sm">
                 <li>
