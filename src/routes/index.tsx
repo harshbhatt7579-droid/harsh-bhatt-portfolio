@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { toast } from "sonner";
 import { z } from "zod";
 import {
@@ -15,8 +16,6 @@ import {
   Gauge,
   Network,
   MapPin,
-  Phone,
-  Mail,
   GraduationCap,
   BadgeCheck,
 } from "lucide-react";
@@ -25,6 +24,39 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+
+// Animation variants
+const fadeInUp = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, ease: "easeOut" },
+};
+
+const fadeIn = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  transition: { duration: 0.8, ease: "easeInOut" },
+};
+
+const slideInUp = {
+  initial: { opacity: 0, y: 40 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.7, ease: "easeOut" },
+};
+
+const staggerContainer = {
+  animate: {
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const staggerItem = {
+  initial: { opacity: 0, y: 15 },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -75,7 +107,15 @@ function ContactForm() {
   const [values, setValues] = useState({ name: "", email: "", message: "" });
 
   return (
-    <form action="https://api.web3forms.com/submit" method="POST" className="surface-card space-y-4 p-6">
+    <motion.form
+      action="https://api.web3forms.com/submit"
+      method="POST"
+      className="surface-card space-y-4 p-6"
+      variants={fadeInUp}
+      initial="initial"
+      whileInView="animate"
+      viewport={{ once: true, amount: 0.2 }}
+    >
       <input type="hidden" name="access_key" value="f4f1e600-5878-4751-9277-6b67e08f3e5e" />
 
       <div className="grid gap-4 sm:grid-cols-2">
@@ -123,17 +163,22 @@ function ContactForm() {
       <Button type="submit" variant="hero" size="lg" className="w-full sm:w-auto">
         Send message
       </Button>
-    </form>
+    </motion.form>
   );
 }
 
 function SectionHeading({ eyebrow, title }: { eyebrow: string; title: string }) {
   return (
-    <div>
+    <motion.div
+      variants={fadeInUp}
+      initial="initial"
+      whileInView="animate"
+      viewport={{ once: true, amount: 0.2 }}
+    >
       <p className="text-xs font-medium tracking-[0.2em] text-primary uppercase">{eyebrow}</p>
       <h2 className="mt-3 font-display text-3xl font-semibold sm:text-4xl">{title}</h2>
       <div className="mt-5 h-px w-16 bg-primary/60" />
-    </div>
+    </motion.div>
   );
 }
 
@@ -142,9 +187,14 @@ function Index() {
     <div className="min-h-screen">
       <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur">
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <span className="font-display text-sm font-bold tracking-widest uppercase">
+          <motion.span
+            className="font-display text-sm font-bold tracking-widest uppercase"
+            variants={fadeIn}
+            initial="initial"
+            animate="animate"
+          >
             Harsh<span className="text-primary">.</span>Bhatt
-          </span>
+          </motion.span>
           <div className="hidden gap-8 text-sm text-muted-foreground sm:flex">
             <a href="#about" className="transition-colors hover:text-primary">About</a>
             <a href="#skills" className="transition-colors hover:text-primary">Skills</a>
@@ -161,24 +211,49 @@ function Index() {
           style={{ backgroundImage: "var(--gradient-hero)" }}
         >
           <div className="mx-auto max-w-6xl">
-            <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-medium tracking-wide text-primary uppercase">
+            <motion.p
+              className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-medium tracking-wide text-primary uppercase"
+              variants={slideInUp}
+              initial="initial"
+              animate="animate"
+            >
               <MapPin className="size-3.5" /> Dehradun, India
-            </p>
-            <h1 className="max-w-3xl text-4xl leading-[1.05] font-bold sm:text-6xl">
+            </motion.p>
+            <motion.h1
+              className="max-w-3xl text-4xl leading-[1.05] font-bold sm:text-6xl"
+              variants={fadeInUp}
+              initial="initial"
+              animate="animate"
+            >
               Harsh Bhatt — <span className="text-gradient">Junior SEO Executive</span>
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
+            </motion.h1>
+            <motion.p
+              className="mt-6 max-w-2xl text-lg text-muted-foreground"
+              variants={fadeInUp}
+              initial="initial"
+              animate="animate"
+              transition={{ delay: 0.2 }}
+            >
               Data-driven SEO specialist focused on keyword research, analytics, on-page
               optimization, and AI search trends.
-            </p>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Button asChild variant="hero" size="xl">
-                <a href="#projects">View Projects</a>
-              </Button>
-              <Button asChild variant="outlineAccent" size="xl">
-                <a href="#contact">Get in Touch</a>
-              </Button>
-            </div>
+            </motion.p>
+            <motion.div
+              className="mt-10 flex flex-wrap gap-4"
+              variants={staggerContainer}
+              initial="initial"
+              animate="animate"
+            >
+              <motion.div variants={staggerItem}>
+                <Button asChild variant="hero" size="xl">
+                  <a href="#projects">View Projects</a>
+                </Button>
+              </motion.div>
+              <motion.div variants={staggerItem}>
+                <Button asChild variant="outlineAccent" size="xl">
+                  <a href="#contact">Get in Touch</a>
+                </Button>
+              </motion.div>
+            </motion.div>
           </div>
         </section>
 
@@ -186,7 +261,13 @@ function Index() {
         <section id="about" className="border-t border-border/60 px-6 py-20">
           <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-[0.8fr_1.2fr]">
             <SectionHeading eyebrow="01 — About" title="About Me" />
-            <div className="space-y-5 text-muted-foreground">
+            <motion.div
+              className="space-y-5 text-muted-foreground"
+              variants={fadeInUp}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true, amount: 0.2 }}
+            >
               <p>
                 I'm an SEO practitioner based in <span className="text-foreground">Dehradun, Uttarakhand</span>,
                 working hands-on across the full on-page and analytics stack. Most of what I know
@@ -203,7 +284,7 @@ function Index() {
                 Continuous learning is the core of the practice — search changes fast, so my process
                 is built to change with it.
               </p>
-            </div>
+            </motion.div>
           </div>
         </section>
 
@@ -211,18 +292,26 @@ function Index() {
         <section id="skills" className="border-t border-border/60 px-6 py-20">
           <div className="mx-auto max-w-6xl">
             <SectionHeading eyebrow="02 — Expertise" title="Skills &amp; Tools" />
-            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <motion.div
+              className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
+              variants={staggerContainer}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true, amount: 0.2 }}
+            >
               {skills.map((s) => (
-                <div
+                <motion.div
                   key={s.title}
                   className="surface-card group p-5 transition-colors hover:border-primary/50"
+                  variants={staggerItem}
+                  whileHover={{ y: -4 }}
                 >
                   <s.icon className="size-5 text-primary" />
                   <h3 className="mt-4 text-base font-semibold">{s.title}</h3>
                   <p className="mt-1.5 text-sm text-muted-foreground">{s.desc}</p>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </section>
 
@@ -231,7 +320,13 @@ function Index() {
           <div className="mx-auto max-w-6xl">
             <SectionHeading eyebrow="03 — Work" title="Projects &amp; Case Studies" />
 
-            <div className="surface-card mt-10 p-7">
+            <motion.div
+              className="surface-card mt-10 p-7"
+              variants={fadeInUp}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true, amount: 0.2 }}
+            >
               <div className="flex flex-wrap items-center justify-between gap-4">
                 <div className="flex items-center gap-3">
                   <FileSearch className="size-5 text-primary" />
@@ -252,8 +347,17 @@ function Index() {
               </p>
 
               {/* Before / After SERP previews */}
-              <div className="mt-8 grid gap-5 lg:grid-cols-2">
-                <div className="rounded-xl border border-border/60 bg-background/50 p-5">
+              <motion.div
+                className="mt-8 grid gap-5 lg:grid-cols-2"
+                variants={staggerContainer}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true, amount: 0.2 }}
+              >
+                <motion.div
+                  className="rounded-xl border border-border/60 bg-background/50 p-5"
+                  variants={staggerItem}
+                >
                   <p className="text-[11px] font-semibold tracking-[0.18em] text-muted-foreground uppercase">
                     Before — original snippet
                   </p>
@@ -263,7 +367,7 @@ function Index() {
                       EkoStay
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                     Flat 26% off on all properties.gift-icon The Great Getaway sale.Flat 26% OFF on All PROPERTIES. click to call +91 8169019090. 
+                      Flat 26% off on all properties.gift-icon The Great Getaway sale.Flat 26% OFF on All PROPERTIES. click to call +91 8169019090.
                     </p>
                   </div>
                   <ul className="mt-4 space-y-1.5 text-sm text-muted-foreground">
@@ -273,9 +377,12 @@ function Index() {
                     <li>Generic term "properties" with weak entity signal.</li>
                     <li>Long title at risk of truncation on mobile.</li>
                   </ul>
-                </div>
+                </motion.div>
 
-                <div className="rounded-xl border border-primary/40 bg-primary/5 p-5">
+                <motion.div
+                  className="rounded-xl border border-primary/40 bg-primary/5 p-5"
+                  variants={staggerItem}
+                >
                   <p className="text-[11px] font-semibold tracking-[0.18em] text-primary uppercase">
                     After — proposed snippet
                   </p>
@@ -296,27 +403,43 @@ function Index() {
                     <li>Dual CTA — reserve online or call.</li>
                     <li>52-char title, description under 150 — zero truncation.</li>
                   </ul>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
 
               {/* Metrics */}
-              <div className="mt-6 grid gap-3 sm:grid-cols-4">
+              <motion.div
+                className="mt-6 grid gap-3 sm:grid-cols-4"
+                variants={staggerContainer}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true, amount: 0.2 }}
+              >
                 {[
                   { v: "52", l: "Title characters" },
                   { v: "<150", l: "Description characters" },
                   { v: "0", l: "Broken elements left" },
                   { v: "2", l: "Conversion paths" },
                 ].map((m) => (
-                  <div key={m.l} className="rounded-lg border border-border/60 p-4">
+                  <motion.div
+                    key={m.l}
+                    className="rounded-lg border border-border/60 p-4"
+                    variants={staggerItem}
+                  >
                     <p className="text-lg font-semibold text-primary">{m.v}</p>
                     <p className="text-xs text-muted-foreground">{m.l}</p>
-                  </div>
+                  </motion.div>
                 ))}
-              </div>
+              </motion.div>
 
               {/* Detail columns */}
-              <div className="mt-8 grid gap-6 border-t border-border/60 pt-8 text-sm sm:grid-cols-3">
-                <div>
+              <motion.div
+                className="mt-8 grid gap-6 border-t border-border/60 pt-8 text-sm sm:grid-cols-3"
+                variants={staggerContainer}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true, amount: 0.2 }}
+              >
+                <motion.div variants={staggerItem}>
                   <p className="text-xs font-semibold tracking-[0.14em] text-primary uppercase">
                     Strategic focus
                   </p>
@@ -325,8 +448,8 @@ function Index() {
                     <li>Transactional intent matched to accommodation requirements.</li>
                     <li>Value-based hook tested against competing SERP listings.</li>
                   </ul>
-                </div>
-                <div>
+                </motion.div>
+                <motion.div variants={staggerItem}>
                   <p className="text-xs font-semibold tracking-[0.14em] text-primary uppercase">
                     Execution
                   </p>
@@ -335,8 +458,8 @@ function Index() {
                     <li>Entity-specific rewrite of the core offering.</li>
                     <li>Promotional hook consolidated into one mention.</li>
                   </ul>
-                </div>
-                <div>
+                </motion.div>
+                <motion.div variants={staggerItem}>
                   <p className="text-xs font-semibold tracking-[0.14em] text-primary uppercase">
                     Technical alignment
                   </p>
@@ -345,31 +468,35 @@ function Index() {
                     <li>Readable, scannable formatting for users and crawlers.</li>
                     <li>Display thresholds respected across mobile and desktop.</li>
                   </ul>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
 
               <p className="mt-6 text-xs text-muted-foreground">
                 Self-initiated research exercise. No client performance data is claimed.
               </p>
-            </div>
+            </motion.div>
           </div>
         </section>
-
-
 
         {/* Certifications */}
         <section className="border-t border-border/60 px-6 py-20">
           <div className="mx-auto max-w-6xl">
             <SectionHeading eyebrow="04 — Credentials" title="Certifications &amp; Education" />
-            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              <div className="surface-card flex gap-4 p-6">
+            <motion.div
+              className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
+              variants={staggerContainer}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              <motion.div className="surface-card flex gap-4 p-6" variants={staggerItem}>
                 <BadgeCheck className="size-5 shrink-0 text-primary" />
                 <div>
                   <h3 className="text-base font-semibold">SEO Certification — Skillwaala</h3>
                   <p className="mt-1 text-sm text-muted-foreground">BR Softech · March 2026</p>
                 </div>
-              </div>
-              <div className="surface-card flex gap-4 p-6">
+              </motion.div>
+              <motion.div className="surface-card flex gap-4 p-6" variants={staggerItem}>
                 <GraduationCap className="size-5 shrink-0 text-primary" />
                 <div>
                   <h3 className="text-base font-semibold">Bachelor of Arts (Multidisciplinary)</h3>
@@ -377,22 +504,22 @@ function Index() {
                     Undergraduate · IGNOU · June 2024–June 2027 (Expected)
                   </p>
                 </div>
-              </div>
-              <div className="surface-card flex gap-4 p-6">
+              </motion.div>
+              <motion.div className="surface-card flex gap-4 p-6" variants={staggerItem}>
                 <GraduationCap className="size-5 shrink-0 text-primary" />
                 <div>
                   <h3 className="text-base font-semibold">Senior Secondary (12th)</h3>
                   <p className="mt-1 text-sm text-muted-foreground">NIOS · 2023–2024</p>
                 </div>
-              </div>
-              <div className="surface-card flex gap-4 p-6">
+              </motion.div>
+              <motion.div className="surface-card flex gap-4 p-6" variants={staggerItem}>
                 <GraduationCap className="size-5 shrink-0 text-primary" />
                 <div>
                   <h3 className="text-base font-semibold">Higher Secondary (10th)</h3>
                   <p className="mt-1 text-sm text-muted-foreground">NIOS · 2019–2020</p>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </section>
 
@@ -401,24 +528,31 @@ function Index() {
           <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-[0.8fr_1.2fr]">
             <div>
               <SectionHeading eyebrow="05 — Contact" title="Get in Touch" />
-              <p className="mt-6 text-sm text-muted-foreground">
-               Eager to join a growth-focused team as a full-time SEO Executive.
-              </p>
-              <ul className="mt-8 space-y-4 text-sm">
-                <li>
-                  <a href="tel:+91" className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-primary">
-                    <Phone className="size-4 text-primary" />
-                  </a>
-                </li>
-                <li>
-                  <a href="mailto:harshbhatt7579@gmail.com" className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-primary">
-                    <Mail className="size-4 text-primary" /> 
-                  </a>
-                </li>
-                <li className="flex items-center gap-3 text-muted-foreground">
+              <motion.p
+                className="mt-6 text-sm text-muted-foreground"
+                variants={fadeInUp}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true, amount: 0.2 }}
+              >
+                Open to SEO roles, freelance audits and collaborations.
+              </motion.p>
+              <motion.ul
+                className="mt-8 space-y-4 text-sm"
+                variants={staggerContainer}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true, amount: 0.2 }}
+              >
+                <motion.li variants={staggerItem} className="flex items-center gap-3 text-muted-foreground">
                   <MapPin className="size-4 text-primary" /> Dehradun, Uttarakhand
-                </li>
-              </ul>
+                </motion.li>
+                <motion.li variants={staggerItem}>
+                  <a href="mailto:harshbhatt7579@gmail.com" className="text-muted-foreground transition-colors hover:text-primary">
+                    harshbhatt7579@gmail.com
+                  </a>
+                </motion.li>
+              </motion.ul>
             </div>
             <ContactForm />
           </div>
@@ -426,9 +560,15 @@ function Index() {
       </main>
 
       <footer className="border-t border-border/60 px-6 py-8">
-        <p className="mx-auto max-w-6xl text-xs text-muted-foreground">
+        <motion.p
+          className="mx-auto max-w-6xl text-xs text-muted-foreground"
+          variants={fadeIn}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           © {new Date().getFullYear()} Harsh Bhatt · SEO Portfolio
-        </p>
+        </motion.p>
       </footer>
     </div>
   );
