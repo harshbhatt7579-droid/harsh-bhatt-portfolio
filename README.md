@@ -14,13 +14,13 @@ Projects / Case Studies: Showcase 2 interactive project cards with tabs for 'Ove
 
 Certifications & Education: Display 'SEO Certification - Skillwaala (BR Softech, Mar 2026)' and 'BA Degrees (IGNOU & NIOS)'.
 
-Contact Footer: Include phone (7302952577), email (harshbhatt7579@gmail.com), location (Dehradun, Uttarakhand), and a functional contact form."
+Contact Footer: Include phone, email , location (Dehradun, Uttarakhand), and a functional contact form."
 
-This project was built with [Lovable](https://lovable.dev).
+This project was built with.
 
-## Build with Lovable
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/efb40bf6-b166-45e3-b9ba-31964dcf2c32).
+
+Continue developing this project in the.
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
 - **Stay in sync**: every change made in Lovable is committed straight to this repository.
@@ -28,7 +28,7 @@ Continue developing this project in the [Lovable editor](https://lovable.dev/pro
 
 ## Development
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Prefer working locally? You need Node.js and npm —
 
 ```sh
 git clone <this-repository-url>
