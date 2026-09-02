@@ -24,6 +24,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { CaseStudies } from "@/components/case-studies";
 
 // Animation variants
 const fadeInUp = {
@@ -316,164 +317,10 @@ function Index() {
         <section id="projects" className="border-t border-border/60 px-6 py-20">
           <div className="mx-auto max-w-6xl">
             <SectionHeading eyebrow="03 — Work" title="Projects &amp; Case Studies" />
-
-            <motion.div
-              className="surface-card mt-10 p-7"
-              variants={fadeInUp}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true, amount: 0.2 }}
-            >
-              <div className="flex flex-wrap items-center justify-between gap-4">
-                <div className="flex items-center gap-3">
-                  <FileSearch className="size-5 text-primary" />
-                  <span className="text-xs font-medium tracking-[0.18em] text-muted-foreground uppercase">
-                    Case Study · EkoStay
-                  </span>
-                </div>
-                <span className="rounded-full border border-silver/30 px-3 py-1 text-[11px] tracking-wide text-silver uppercase">
-                  Personal SEO research
-                </span>
-              </div>
-
-              <h3 className="mt-4 text-xl font-semibold sm:text-2xl">Meta Title &amp; Description</h3>
-              <p className="mt-2 max-w-3xl text-sm text-muted-foreground">
-                A self-initiated title tag and meta description assessment for EkoStay, a luxury
-                villa rental platform — evaluating keyword intent, user incentives and SERP
-                structural alignment for high-intent travel queries.
-              </p>
-
-              {/* Before / After SERP previews */}
-              <motion.div
-                className="mt-8 grid gap-5 lg:grid-cols-2"
-                variants={staggerContainer}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true, amount: 0.2 }}
-              >
-                <motion.div
-                  className="rounded-xl border border-border/60 bg-background/50 p-5"
-                  variants={staggerItem}
-                >
-                  <p className="text-[11px] font-semibold tracking-[0.18em] text-muted-foreground uppercase">
-                    Before — original snippet
-                  </p>
-                  <div className="mt-4 rounded-lg border border-border/50 bg-card/60 p-4">
-                    <p className="text-xs text-muted-foreground">https://www.ekostay.com</p>
-                    <p className="mt-1 text-base font-medium text-silver">
-                      EkoStay
-                    </p>
-                    <p className="mt-1 text-sm text-muted-foreground">
-                      Flat 26% off on all properties.gift-icon The Great Getaway sale.Flat 26% OFF on All PROPERTIES. click to call +91 8169019090.
-                    </p>
-                  </div>
-                  <ul className="mt-4 space-y-1.5 text-sm text-muted-foreground">
-                    <li>Broken code element rendering as text (gift-icon).</li>
-                    <li>Aggressive ALL CAPS reducing readability.</li>
-                    <li>"FLAT 26% OFF" repeated twice, wasting characters.</li>
-                    <li>Generic term "properties" with weak entity signal.</li>
-                    <li>Long title at risk of truncation on mobile.</li>
-                  </ul>
-                </motion.div>
-
-                <motion.div
-                  className="rounded-xl border border-primary/40 bg-primary/5 p-5"
-                  variants={staggerItem}
-                >
-                  <p className="text-[11px] font-semibold tracking-[0.18em] text-primary uppercase">
-                    After — proposed snippet
-                  </p>
-                  <div className="mt-4 rounded-lg border border-border/50 bg-card/60 p-4">
-                    <p className="text-xs text-muted-foreground">https://www.ekostay.com</p>
-                    <p className="mt-1 text-base font-medium text-primary">
-                      Book Private Villa with Pool: Flat 26% Off | EkoStay
-                    </p>
-                    <p className="mt-1 text-sm text-muted-foreground">
-                      The Great Getaway Sale is live! Book luxury private villas with pools at
-                      EkoStay and get a flat 26% off. Reserve online or call +91 8169019090.
-                    </p>
-                  </div>
-                  <ul className="mt-4 space-y-1.5 text-sm text-muted-foreground">
-                    <li>Direct CTA ("Book") plus a value hook ("Flat 26% Off").</li>
-                    <li>Sentence case, clean and professional presentation.</li>
-                    <li>"Luxury private villas with pools" as a precise entity.</li>
-                    <li>Dual CTA — reserve online or call.</li>
-                    <li>52-char title, description under 150 — zero truncation.</li>
-                  </ul>
-                </motion.div>
-              </motion.div>
-
-              {/* Metrics */}
-              <motion.div
-                className="mt-6 grid gap-3 sm:grid-cols-4"
-                variants={staggerContainer}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true, amount: 0.2 }}
-              >
-                {[
-                  { v: "52", l: "Title characters" },
-                  { v: "<150", l: "Description characters" },
-                  { v: "0", l: "Broken elements left" },
-                  { v: "2", l: "Conversion paths" },
-                ].map((m) => (
-                  <motion.div
-                    key={m.l}
-                    className="rounded-lg border border-border/60 p-4"
-                    variants={staggerItem}
-                  >
-                    <p className="text-lg font-semibold text-primary">{m.v}</p>
-                    <p className="text-xs text-muted-foreground">{m.l}</p>
-                  </motion.div>
-                ))}
-              </motion.div>
-
-              {/* Detail columns */}
-              <motion.div
-                className="mt-8 grid gap-6 border-t border-border/60 pt-8 text-sm sm:grid-cols-3"
-                variants={staggerContainer}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true, amount: 0.2 }}
-              >
-                <motion.div variants={staggerItem}>
-                  <p className="text-xs font-semibold tracking-[0.14em] text-primary uppercase">
-                    Strategic focus
-                  </p>
-                  <ul className="mt-2 space-y-1.5 text-muted-foreground">
-                    <li>Theoretical title framework built on semantic search patterns.</li>
-                    <li>Transactional intent matched to accommodation requirements.</li>
-                    <li>Value-based hook tested against competing SERP listings.</li>
-                  </ul>
-                </motion.div>
-                <motion.div variants={staggerItem}>
-                  <p className="text-xs font-semibold tracking-[0.14em] text-primary uppercase">
-                    Execution
-                  </p>
-                  <ul className="mt-2 space-y-1.5 text-muted-foreground">
-                    <li>Technical cleanup of broken text and casing.</li>
-                    <li>Entity-specific rewrite of the core offering.</li>
-                    <li>Promotional hook consolidated into one mention.</li>
-                  </ul>
-                </motion.div>
-                <motion.div variants={staggerItem}>
-                  <p className="text-xs font-semibold tracking-[0.14em] text-primary uppercase">
-                    Technical alignment
-                  </p>
-                  <ul className="mt-2 space-y-1.5 text-muted-foreground">
-                    <li>Clear Intent + Benefit + Brand boundaries for NLP parsing.</li>
-                    <li>Readable, scannable formatting for users and crawlers.</li>
-                    <li>Display thresholds respected across mobile and desktop.</li>
-                  </ul>
-                </motion.div>
-              </motion.div>
-
-              <p className="mt-6 text-xs text-muted-foreground">
-                Self-initiated research exercise. No client performance data is claimed.
-              </p>
-            </motion.div>
+            <CaseStudies />
           </div>
         </section>
+
 
         {/* Certifications */}
         <section className="border-t border-border/60 px-6 py-20">
