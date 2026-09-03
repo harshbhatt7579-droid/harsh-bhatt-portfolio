@@ -113,45 +113,61 @@ const caseStudies: CaseStudy[] = [
     id: "on-page-audit",
     client: "example.com",
     tag: "SEO audit exercise",
-    title: "On-Page Audit — URL, H1, Title & Description",
+    title: "SEO Audit Case-Study: Analyzing Optimization",
     summary:
-      "A comprehensive on-page SEO audit identifying optimization opportunities across H1 tags, meta descriptions, URL structure and page titles — refined for clarity, accurate character counts and targeted keyword usage without altering core business intent.",
+      "This project involved conducting a comprehensive SEO audit of example.com to identify critical optimization opportunities. The scope of the audit focused on improving site visibility and user experience through strategic on-page element optimization. Key areas analyzed included H1 tags, meta descriptions, URL structures, and page titles. The main solution provided involved refining these elements for clarity, accurate character counts, and targeted keyword usage, ensuring alignment with modern AI search techniques without altering the core business intent.",
     highlights: ["URL structure", "H1 hierarchy", "AI-search aligned"],
+    overview: {
+      heading: "Overview",
+      text: "This project involved conducting a comprehensive SEO audit of example.com to identify critical optimization opportunities. The scope of the audit focused on improving site visibility and user experience through strategic on-page element optimization. Key areas analyzed included H1 tags, meta descriptions, URL structures, and page titles. The main solution provided involved refining these elements for clarity, accurate character counts, and targeted keyword usage, ensuring alignment with modern AI search techniques without altering the core business intent.",
+    },
+    pairs: [
+      {
+        heading: "URL Optimization",
+        about:
+          "This section outlines the URL optimization strategy, focusing on shortening the URL structure, improving clarity, and ensuring the inclusion of 'www' to create a more readable and SEO-friendly web address.",
+        beforeLabel: "Original URL",
+        before: "https://example.com/seo-strategies-for-2026-bridging-ai-and-traditional-search/",
+        afterLabel: "Optimised URL",
+        after: "https://www.example.com/seo-strategies-2026/",
+      },
+      {
+        heading: "H1 Optimization",
+        about:
+          "The main heading was refined to align perfectly with the target topic and ensure clarity for both the audience and search engines. Additionally, the size of the heading was adjusted to optimize the visual hierarchy and page layout.",
+        beforeLabel: "Original H1",
+        before: "Effective SEO Strategies 2026: Bridging AI and Traditional Search Methods for Business",
+        afterLabel: "Optimised H1",
+        after: "2026 SEO Strategies: Bridging AI and Traditional Search",
+      },
+      {
+        heading: "Title Optimization",
+        about:
+          "The title was refined to seamlessly incorporate primary keywords while maintaining the optimal character length, ensuring both search engine relevance and user click-through potential.",
+        beforeLabel: "Original Title",
+        before: "SEO Strategies for 2026: Bridging AI and Traditional Search –",
+        beforeMeta: "Title length 73 · Pixel width 674",
+        afterLabel: "Optimised Title",
+        after: "2026 SEO Strategies: Bridging AI and Traditional Search",
+        afterMeta: "Title length 54",
+      },
+      {
+        heading: "Description Optimisation",
+        about:
+          "The Meta Description was crafted to offer clear, direct value to the reader. By avoiding forceful calls-to-action and focusing on actionable insights for 2026 SEO, it establishes authority and relevance naturally.",
+        beforeLabel: "Original Meta Description",
+        before:
+          "Learn the most effective search engine optimization strategies for 2026 to boost your Google rankings, drive organic traffic, and master modern AI search techniques with our complete step-by-step guide for businesses.",
+        beforeMeta: "Length 217",
+        afterLabel: "Optimised Meta Description",
+        after:
+          "Discover effective 2026 SEO strategies to boost your Google rankings, drive organic traffic, and master modern AI search techniques with our complete guide.",
+        afterMeta: "Length 156",
+      },
+    ],
     blocks: [
       {
-        heading: "URL optimization",
-        points: [
-          "Shortened the URL structure for readability.",
-          'Ensured inclusion of "www" for a consistent canonical host.',
-          "Clearer, SEO-friendly slug aligned to the page topic.",
-        ],
-      },
-      {
-        heading: "H1 optimization",
-        points: [
-          "Refined the main heading to align exactly with the target topic.",
-          "Improved clarity for both readers and search engines.",
-          "Adjusted heading size to correct visual hierarchy and layout.",
-        ],
-      },
-      {
-        heading: "Title optimization",
-        points: [
-          "Primary keywords incorporated naturally into the title.",
-          "Kept within optimal character length to avoid truncation.",
-          "Balanced search relevance with click-through potential.",
-        ],
-      },
-      {
-        heading: "Description optimization",
-        points: [
-          "Written to offer clear, direct value to the reader.",
-          "Avoided forceful calls-to-action in favour of actionable insight.",
-          "Framed around 2026 SEO practice to establish authority naturally.",
-        ],
-      },
-      {
-        heading: "Impact & key takeaways",
+        heading: "Impact & Key Takeaways",
         points: [
           "Enhanced search visibility: aligned URLs, H1s and meta tags help engines index and rank the content for targeted queries.",
           "Improved user engagement: clear titles and descriptions match search intent and support CTR.",
