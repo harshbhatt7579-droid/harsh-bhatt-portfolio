@@ -140,6 +140,8 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-body);
+    font-weight: 300;
+    letter-spacing: -0.01em;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -148,6 +150,7 @@
   h3,
   h4 {
     font-family: var(--font-display);
+    font-weight: 700;
     letter-spacing: -0.02em;
   }
 }
