@@ -169,9 +169,9 @@ const caseStudies: CaseStudy[] = [
       {
         heading: "Impact & Key Takeaways",
         points: [
-          "Enhanced search visibility: aligned URLs, H1s and meta tags help engines index and rank the content for targeted queries.",
-          "Improved user engagement: clear titles and descriptions match search intent and support CTR.",
-          "Optimized visual hierarchy: structural H1 adjustments keep a clean content hierarchy and better readability.",
+          "Enhanced Search Visibility: Aligning URLs, H1 headers, and meta tags ensures search engines correctly index and rank the content for targeted 2026 SEO queries.",
+          "Improved User Engagement: Clear, informative titles and descriptions improve click-through rates (CTR) by directly matching user search intent.",
+          "Optimized Visual Hierarchy: Structural H1 adjustments maintain a clean content hierarchy, improving readability and overall user experience.",
         ],
       },
     ],
