@@ -107,7 +107,7 @@ const caseStudies: CaseStudy[] = [
         ],
       },
     ],
-    note: "Self-initiated research exercise. No client performance data is claimed.",
+    note: "Self-initiated research exercise based on publicly visible SERP data. No client relationship or performance data is claimed.",
   },
   {
     id: "on-page-audit",
@@ -175,7 +175,7 @@ const caseStudies: CaseStudy[] = [
         ],
       },
     ],
-    note: "Audit exercise on a sample domain. No client performance data is claimed.",
+    note: "This case study reflects optimization strategies executed for an active, real-world project. To protect client confidentiality and NDA agreements, domain identifiers have been anonymized using example.com. Full performance data, methodology, and verified audit reports are available upon request for review.",
   },
 ];
 
