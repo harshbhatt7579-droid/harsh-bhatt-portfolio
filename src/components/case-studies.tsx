@@ -387,15 +387,9 @@ export function CaseStudies() {
             </div>
 
             <div className="mt-7">
-              {study.id === "on-page-audit" ? (
-                <span className="inline-flex items-center gap-2 rounded-full border border-silver/30 px-4 py-2 text-xs text-silver/70">
-                  Coming soon
-                </span>
-              ) : (
-                <Button variant="outlineAccent" onClick={() => setOpenId(study.id)}>
-                  View full case study <ArrowRight className="size-4" />
-                </Button>
-              )}
+              <Button variant="outlineAccent" onClick={() => setOpenId(study.id)}>
+                View full case study <ArrowRight className="size-4" />
+              </Button>
             </div>
           </motion.article>
         ))}
