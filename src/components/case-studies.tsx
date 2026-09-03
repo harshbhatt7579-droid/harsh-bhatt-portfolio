@@ -259,12 +259,54 @@ function CaseStudyDetail({ study, onClose }: { study: CaseStudy; onClose: () => 
 
         <div className="px-6 py-8 sm:px-8">
           <h3 className="text-2xl font-semibold sm:text-3xl">{study.title}</h3>
-          <p className="mt-3 text-sm text-muted-foreground">{study.summary}</p>
+          {!study.overview && <p className="mt-3 text-sm text-muted-foreground">{study.summary}</p>}
+
+          {study.overview && (
+            <div className="mt-6 rounded-xl border border-border/60 bg-background/40 p-5">
+              <p className="text-xs font-semibold tracking-[0.18em] text-primary uppercase">
+                {study.overview.heading}
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                {study.overview.text}
+              </p>
+            </div>
+          )}
 
           {study.before && study.after && (
             <div className="mt-8 grid gap-5">
               <SerpCard serp={study.before} variant="before" />
               <SerpCard serp={study.after} variant="after" />
+            </div>
+          )}
+
+          {study.pairs && (
+            <div className="mt-8 space-y-6">
+              {study.pairs.map((p) => (
+                <div key={p.heading} className="rounded-xl border border-border/60 p-5">
+                  <h4 className="text-base font-semibold text-silver">{p.heading}</h4>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.about}</p>
+                  <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                    <div className="rounded-lg border border-border/60 bg-background/50 p-4">
+                      <p className="text-[11px] font-semibold tracking-[0.18em] text-muted-foreground uppercase">
+                        {p.beforeLabel}
+                      </p>
+                      <p className="mt-2 text-sm break-words text-silver/80">{p.before}</p>
+                      {p.beforeMeta && (
+                        <p className="mt-2 text-xs text-muted-foreground">{p.beforeMeta}</p>
+                      )}
+                    </div>
+                    <div className="rounded-lg border border-primary/40 bg-primary/5 p-4">
+                      <p className="text-[11px] font-semibold tracking-[0.18em] text-primary uppercase">
+                        {p.afterLabel}
+                      </p>
+                      <p className="mt-2 text-sm break-words text-primary">{p.after}</p>
+                      {p.afterMeta && (
+                        <p className="mt-2 text-xs text-muted-foreground">{p.afterMeta}</p>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           )}
 
