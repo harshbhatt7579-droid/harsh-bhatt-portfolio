@@ -107,7 +107,7 @@ const caseStudies: CaseStudy[] = [
         ],
       },
     ],
-    note: "Self-initiated research exercise. No client performance data is claimed.",
+    note: "Self-initiated research exercise based on publicly visible SERP data. No client relationship or performance data is claimed.",
   },
   {
     id: "on-page-audit",
