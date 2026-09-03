@@ -13,6 +13,17 @@ type Serp = {
 
 type Block = { heading: string; points: string[] };
 
+type ComparePair = {
+  heading: string;
+  about: string;
+  beforeLabel: string;
+  before: string;
+  beforeMeta?: string;
+  afterLabel: string;
+  after: string;
+  afterMeta?: string;
+};
+
 type CaseStudy = {
   id: string;
   client: string;
@@ -23,6 +34,8 @@ type CaseStudy = {
   before?: Serp;
   after?: Serp;
   metrics?: { v: string; l: string }[];
+  overview?: { heading: string; text: string };
+  pairs?: ComparePair[];
   blocks: Block[];
   note: string;
 };
