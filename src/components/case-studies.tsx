@@ -453,6 +453,14 @@ function CaseStudyDetail({ study, onClose }: { study: CaseStudy; onClose: () => 
             </div>
           )}
 
+          {study.articleBefore && study.articleAfter && (
+            <div className="mt-8 grid gap-6">
+              <ArticleCard doc={study.articleBefore} variant="before" />
+              <ArticleCard doc={study.articleAfter} variant="after" />
+            </div>
+          )}
+
+
           {study.pairs && (
             <div className="mt-8 space-y-6">
               {study.pairs.map((p) => (
