@@ -53,7 +53,7 @@ const caseStudies: CaseStudy[] = [
       url: "https://www.e••••••.com",
       title: "E••••••",
       description:
-        "Flat 26% off on all properties.gift-icon The Great Getaway sale.Flat 26% OFF on All PROPERTIES. click to call +91 8169019090.",
+        "Flat 26% off on all properties.gift-icon The Great Getaway sale.Flat 26% OFF on All PROPERTIES. click to call +91 8•••••••••.",
       notes: [
         "Broken code element rendering as text (gift-icon).",
         "Aggressive ALL CAPS reducing readability.",
@@ -66,7 +66,7 @@ const caseStudies: CaseStudy[] = [
       url: "https://www.e••••••.com",
       title: "Book Private Villa with Pool: Flat 26% Off | E••••••",
       description:
-        "The Great Getaway Sale is live! Book luxury private villas with pools at E•••••• and get a flat 26% off. Reserve online or call +91 8169019090.",
+        "The Great Getaway Sale is live! Book luxury private villas with pools at E•••••• and get a flat 26% off. Reserve online or call +91 8•••••••••.",
       notes: [
         'Direct CTA ("Book") plus a value hook ("Flat 26% Off").',
         "Sentence case, clean and professional presentation.",
