@@ -388,6 +388,76 @@ function SerpCard({ serp, variant }: { serp: Serp; variant: "before" | "after" }
   );
 }
 
+function ArticleCard({ doc, variant }: { doc: ArticleDoc; variant: "before" | "after" }) {
+  const isAfter = variant === "after";
+  return (
+    <div
+      className={
+        isAfter
+          ? "rounded-xl border border-primary/40 bg-primary/5 p-5"
+          : "rounded-xl border border-border/60 bg-background/50 p-5"
+      }
+    >
+      <p
+        className={
+          isAfter
+            ? "text-[11px] font-semibold tracking-[0.18em] text-primary uppercase"
+            : "text-[11px] font-semibold tracking-[0.18em] text-muted-foreground uppercase"
+        }
+      >
+        {isAfter ? "After — optimised article" : "Before — original article"}
+      </p>
+
+      <div className="mt-4 overflow-hidden rounded-lg border border-border/50 bg-card/60">
+        <div className="flex items-center gap-2 border-b border-border/50 bg-background/60 px-3 py-2">
+          <span className="size-2 rounded-full bg-muted-foreground/40" />
+          <span className="size-2 rounded-full bg-muted-foreground/30" />
+          <span className="size-2 rounded-full bg-muted-foreground/20" />
+          <span className="ml-2 truncate rounded bg-card/80 px-2 py-0.5 text-[11px] text-muted-foreground">
+            {doc.url}
+          </span>
+        </div>
+        <div className="max-h-[420px] overflow-y-auto px-5 py-5">
+          <h5
+            className={`text-lg leading-snug font-bold ${isAfter ? "text-primary" : "text-silver"}`}
+          >
+            {doc.title}
+          </h5>
+          <div className="mt-4 space-y-4">
+            {doc.blocks.map((b, i) => (
+              <div key={i} className="space-y-2">
+                {b.h && (
+                  <p className="text-sm font-semibold text-silver">{b.h}</p>
+                )}
+                {b.p?.map((t) => (
+                  <p key={t} className="text-sm leading-relaxed text-muted-foreground">
+                    {t}
+                  </p>
+                ))}
+                {b.ul && (
+                  <ul className="list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-muted-foreground">
+                    {b.ul.map((t) => (
+                      <li key={t}>{t}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <ul className="mt-4 space-y-1.5 text-sm text-muted-foreground">
+        {doc.notes.map((n) => (
+          <li key={n}>{n}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+
+
 function CaseStudyDetail({ study, onClose }: { study: CaseStudy; onClose: () => void }) {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
