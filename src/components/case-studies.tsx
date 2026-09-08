@@ -43,15 +43,15 @@ type CaseStudy = {
 const caseStudies: CaseStudy[] = [
   {
     id: "ekostay",
-    client: "EkoStay",
+    client: "E••••••",
     tag: "Personal SEO research",
     title: "Meta Title & Description",
     summary:
-      "A self-initiated title tag and meta description assessment for EkoStay, a luxury villa rental platform — evaluating keyword intent, user incentives and SERP structural alignment for high-intent travel queries.",
+      "A self-initiated title tag and meta description assessment for E••••••, a luxury villa rental platform — evaluating keyword intent, user incentives and SERP structural alignment for high-intent travel queries.",
     highlights: ["Before → After SERP", "Intent-led rewrite", "Truncation control"],
     before: {
-      url: "https://www.ekostay.com",
-      title: "EkoStay",
+      url: "https://www.e••••••.com",
+      title: "E••••••",
       description:
         "Flat 26% off on all properties.gift-icon The Great Getaway sale.Flat 26% OFF on All PROPERTIES. click to call +91 8169019090.",
       notes: [
@@ -63,10 +63,10 @@ const caseStudies: CaseStudy[] = [
       ],
     },
     after: {
-      url: "https://www.ekostay.com",
-      title: "Book Private Villa with Pool: Flat 26% Off | EkoStay",
+      url: "https://www.e••••••.com",
+      title: "Book Private Villa with Pool: Flat 26% Off | E••••••",
       description:
-        "The Great Getaway Sale is live! Book luxury private villas with pools at EkoStay and get a flat 26% off. Reserve online or call +91 8169019090.",
+        "The Great Getaway Sale is live! Book luxury private villas with pools at E•••••• and get a flat 26% off. Reserve online or call +91 8169019090.",
       notes: [
         'Direct CTA ("Book") plus a value hook ("Flat 26% Off").',
         "Sentence case, clean and professional presentation.",
