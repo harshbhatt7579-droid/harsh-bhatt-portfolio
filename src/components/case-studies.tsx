@@ -24,6 +24,15 @@ type ComparePair = {
   afterMeta?: string;
 };
 
+type ArticleBlock = { h?: string; p?: string[]; ul?: string[] };
+
+type ArticleDoc = {
+  url: string;
+  title: string;
+  blocks: ArticleBlock[];
+  notes: string[];
+};
+
 type CaseStudy = {
   id: string;
   client: string;
@@ -33,6 +42,8 @@ type CaseStudy = {
   highlights: string[];
   before?: Serp;
   after?: Serp;
+  articleBefore?: ArticleDoc;
+  articleAfter?: ArticleDoc;
   metrics?: { v: string; l: string }[];
   overview?: { heading: string; text: string };
   pairs?: ComparePair[];
