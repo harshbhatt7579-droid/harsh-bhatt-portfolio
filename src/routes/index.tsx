@@ -274,8 +274,8 @@ function Index() {
               </p>
               <p>
                 I run structured tests rather than guessing: hypothesis, change, measurement in
-                Search Console and GA4, then iterate. I'm currently deep in how AI overviews and
-                generative engines select sources, and how NLP-oriented content structure changes
+                Search Console and GA4, then iterate. I'm currently deep in AI overviews and
+                generative engine source selection, plus NLP-oriented content structure changes
                 visibility there.
               </p>
               <p>
