@@ -186,7 +186,7 @@ const caseStudies: CaseStudy[] = [
         ],
       },
     ],
-    note: "Audit exercise on a sample domain. No client performance data is claimed.",
+    note: "No client performance data is claimed.",
   },
   {
     id: "content-optimisation",
@@ -250,7 +250,7 @@ const caseStudies: CaseStudy[] = [
             "Traditional keyword research is no longer just about search volume; in 2026, it is about understanding user intent across both traditional search engines and AI conversational models.",
           ],
           ul: [
-            "Informational: The user wants to learn something (e.g., “How does AI search work?”).",
+            "Informational: The user wants to learn something (e.g., “What is AI search?”).",
             "Commercial: The user is evaluating options before buying (e.g., “Best SEO tools for beginners”).",
             "Transactional: The user is ready to make a purchase or take action (e.g., “Buy Semrush subscription”).",
             "Navigational: The user is looking for a specific website or page (e.g., “Google Search Console login”).",
@@ -276,7 +276,7 @@ const caseStudies: CaseStudy[] = [
           ],
         },
         {
-          h: "How to Structure High-Quality Content",
+          h: "Structuring High-Quality Content",
           ul: [
             "Lead with Direct Value: Open each section by answering the main question immediately before diving into context or examples.",
             "Optimize for Scannability: Short paragraphs, clear H2/H3 subheadings, bulleted lists, and bold text so readers and AI crawlers can parse key information.",
