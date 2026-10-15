@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Case studies use a shared `/case/$slug` page backed by typed, user-supplied case data; keep the data empty until verified details, dates, proof, and a share image are supplied, so the portfolio never invents claims.
