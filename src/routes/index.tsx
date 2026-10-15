@@ -274,8 +274,8 @@ function Index() {
               </p>
               <p>
                 I run structured tests rather than guessing: hypothesis, change, measurement in
-                Search Console and GA4, then iterate. I'm currently deep in how AI overviews and
-                generative engines select sources, and how NLP-oriented content structure changes
+                Search Console and GA4, then iterate. I'm currently deep in AI overviews and
+                generative engine source selection, plus NLP-oriented content structure changes
                 visibility there.
               </p>
               <p>
@@ -381,22 +381,6 @@ function Index() {
               >
                 Open to SEO roles, freelance audits and collaborations.
               </motion.p>
-              <motion.ul
-                className="mt-8 space-y-4 text-sm"
-                variants={staggerContainer}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true, amount: 0.2 }}
-              >
-                <motion.li variants={staggerItem} className="flex items-center gap-3 text-muted-foreground">
-                  <MapPin className="size-4 text-primary" /> Dehradun, Uttarakhand
-                </motion.li>
-                <motion.li variants={staggerItem}>
-                  <a href="mailto:harshbhatt7579@gmail.com" className="text-muted-foreground transition-colors hover:text-primary">
-                    harshbhatt7579@gmail.com
-                  </a>
-                </motion.li>
-              </motion.ul>
             </div>
             <ContactForm />
           </div>

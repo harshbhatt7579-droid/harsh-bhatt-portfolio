@@ -186,7 +186,7 @@ const caseStudies: CaseStudy[] = [
         ],
       },
     ],
-    note: "Audit exercise on a sample domain. No client performance data is claimed.",
+    note: "No client performance data is claimed.",
   },
   {
     id: "content-optimisation",
@@ -202,7 +202,7 @@ const caseStudies: CaseStudy[] = [
       blocks: [
         {
           p: [
-            "In this article we are going to discuss everything about SEO in 2026 and how SEO works and what you should do for your website. SEO stands for search engine optimization and it is the process of optimizing your website so that it can rank higher on Google and other search engines like Bing, and nowadays there are also AI tools like ChatGPT, Gemini and Perplexity where people are searching, so SEO is very important for every business in 2026 and if you are not doing SEO then you are losing traffic and customers.",
+            "In this article we are going to discuss everything about SEO in 2026, SEO fundamentals and what you should do for your website. SEO stands for search engine optimization and it is the process of optimizing your website so that it can rank higher on Google and other search engines like Bing, and nowadays there are also AI tools like ChatGPT, Gemini and Perplexity where people are searching, so SEO is very important for every business in 2026 and if you are not doing SEO then you are losing traffic and customers.",
             "First of all you should know that search engines use crawlers which are also called spiders and these crawlers crawl your website and store your pages in the index, and after that when someone searches something the search engine shows the results, so you have to make sure your website is crawlable and indexable otherwise nothing will work. Also there are different types of search intent like informational, commercial, transactional and navigational and you should always keep intent in mind while doing keyword research because keywords are the base of SEO and without keywords you cannot rank.",
             "Now coming to content, content is king as everyone says and Google likes quality content, so you should write good quality content which is helpful for users and Google has a framework called E-E-A-T which means experience, expertise, authoritativeness and trustworthiness and you should follow it. Also you should do on page SEO which includes title tag, meta description, headings, URL structure, image alt text and internal linking, and off page SEO which includes backlinks and brand mentions and local SEO like Google Business Profile, and technical SEO like sitemap, robots.txt and page speed also matters a lot for rankings.",
             "So in conclusion SEO in 2026 is not very different but it is also different because of AI, and if you follow all the above SEO tips and tricks and keep updating your content regularly then you will definitely see improvement in your rankings and traffic. If you want to know more about SEO then keep reading our blog for more SEO tips.",
@@ -250,7 +250,7 @@ const caseStudies: CaseStudy[] = [
             "Traditional keyword research is no longer just about search volume; in 2026, it is about understanding user intent across both traditional search engines and AI conversational models.",
           ],
           ul: [
-            "Informational: The user wants to learn something (e.g., “How does AI search work?”).",
+            "Informational: The user wants to learn something (e.g., “What is AI search?”).",
             "Commercial: The user is evaluating options before buying (e.g., “Best SEO tools for beginners”).",
             "Transactional: The user is ready to make a purchase or take action (e.g., “Buy Semrush subscription”).",
             "Navigational: The user is looking for a specific website or page (e.g., “Google Search Console login”).",
@@ -276,7 +276,7 @@ const caseStudies: CaseStudy[] = [
           ],
         },
         {
-          h: "How to Structure High-Quality Content",
+          h: "Structuring High-Quality Content",
           ul: [
             "Lead with Direct Value: Open each section by answering the main question immediately before diving into context or examples.",
             "Optimize for Scannability: Short paragraphs, clear H2/H3 subheadings, bulleted lists, and bold text so readers and AI crawlers can parse key information.",
