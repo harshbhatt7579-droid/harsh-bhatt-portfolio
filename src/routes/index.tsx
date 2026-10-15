@@ -24,7 +24,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { CaseStudies } from "@/components/case-studies";
 
 // Animation variants
 const fadeInUp = {
@@ -62,13 +61,13 @@ const staggerItem = {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Harsh Bhatt — Junior SEO Executive | SEO Portfolio" },
+      { title: "Harsh Bhatt | SEO Specialist" },
       {
         name: "description",
         content:
           "Portfolio of Harsh Bhatt, a data-driven SEO specialist in Dehradun, India — keyword research, analytics, on-page optimization and AI search (AIO/GEO) trends.",
       },
-      { property: "og:title", content: "Harsh Bhatt — Junior SEO Executive" },
+      { property: "og:title", content: "Harsh Bhatt | SEO Specialist" },
       {
         property: "og:description",
         content:
@@ -76,6 +75,7 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:type", content: "profile" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Harsh Bhatt | SEO Specialist" },
     ],
     links: [
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
@@ -85,17 +85,17 @@ export const Route = createFileRoute("/")({
 });
 
 const skills = [
-  { icon: Search, title: "Keyword Research", desc: "Intent-first keyword discovery and prioritisation." },
-  { icon: Target, title: "Competitor Analysis", desc: "SERP gap studies and content benchmarking." },
-  { icon: BarChart3, title: "Google Analytics", desc: "GA4 traffic, engagement and conversion tracking." },
-  { icon: Gauge, title: "Search Console", desc: "Query, coverage and indexing diagnostics." },
-  { icon: Network, title: "Keyword Mapping", desc: "One page, one intent — mapped across the site." },
-  { icon: Layers, title: "Topic Clustering", desc: "Pillar and cluster architecture for topical depth." },
-  { icon: Code2, title: "HTML Signals", desc: "Headings, schema and semantic markup hygiene." },
-  { icon: Link2, title: "Canonical Tags", desc: "Duplicate control and consolidation of signals." },
-  { icon: FileSearch, title: "On-Page SEO", desc: "Titles, metas, internal links and content depth." },
-  { icon: Sparkles, title: "AIO / GEO", desc: "Optimising for AI overviews and generative engines." },
-  { icon: Brain, title: "NLP Optimization", desc: "Entity coverage and natural language relevance." },
+  { icon: Search, title: "Keyword Research", desc: "I find words people use to search." },
+  { icon: Target, title: "Competitor Analysis", desc: "I check what other sites cover." },
+  { icon: BarChart3, title: "Google Analytics", desc: "I check site visits and activity in GA4." },
+  { icon: Gauge, title: "Search Console", desc: "I check Google searches, pages, and indexing." },
+  { icon: Network, title: "Keyword Mapping", desc: "I match search terms to the right pages." },
+  { icon: Layers, title: "Topic Clustering", desc: "I group related topics and pages." },
+  { icon: Code2, title: "HTML Signals", desc: "I check headings and page markup." },
+  { icon: Link2, title: "Canonical Tags", desc: "I check which page Google should treat as the main one." },
+  { icon: FileSearch, title: "On-Page SEO", desc: "I check page titles, descriptions, and links." },
+  { icon: Sparkles, title: "AIO / GEO", desc: "I study how sites appear in AI search." },
+  { icon: Brain, title: "NLP Optimization", desc: "I make sure content covers its key ideas." },
 ];
 
 const contactSchema = z.object({
@@ -223,7 +223,7 @@ function Index() {
               initial="initial"
               animate="animate"
             >
-              Harsh Bhatt — <span className="text-gradient">Junior SEO Executive</span>
+              Harsh Bhatt — <span className="text-gradient">SEO Specialist</span>
             </motion.h1>
             <motion.p
               className="mt-6 max-w-2xl text-lg text-muted-foreground"
@@ -267,20 +267,16 @@ function Index() {
               viewport={{ once: true, amount: 0.2 }}
             >
               <p>
-                I'm an SEO practitioner based in <span className="text-foreground">Dehradun, Uttarakhand</span>,
-                working hands-on across the full on-page and analytics stack. Most of what I know
-                comes from executing independently — auditing real sites, mapping keywords, shipping
-                changes and measuring what actually moved.
+                I'm an SEO specialist based in <span className="text-foreground">Dehradun, Uttarakhand</span>.
+                I work directly on search research, page updates, and site data. I learn by testing changes
+                and checking what happened.
               </p>
               <p>
-                I run structured tests rather than guessing: hypothesis, change, measurement in
-                Search Console and GA4, then iterate. I'm currently deep in AI overviews and
-                generative engine source selection, plus NLP-oriented content structure changes
-                visibility there.
+                I test changes and review the results in Search Console and GA4. I also study how
+                AI search tools find and show information.
               </p>
               <p>
-                Continuous learning is the core of the practice — search changes fast, so my process
-                is built to change with it.
+                I keep learning as search changes.
               </p>
             </motion.div>
           </div>
@@ -317,7 +313,14 @@ function Index() {
         <section id="projects" className="border-t border-border/60 px-6 py-20">
           <div className="mx-auto max-w-6xl">
             <SectionHeading eyebrow="03 — Work" title="Projects &amp; Case Studies" />
-            <CaseStudies />
+            <div className="mt-10 flex flex-col items-start gap-6 border-y border-border/60 py-8 sm:flex-row sm:items-center sm:justify-between">
+              <p className="max-w-2xl text-base leading-relaxed text-muted-foreground">
+                Case studies are shared on request. Message me and I will send the ones that fit your site.
+              </p>
+              <Button asChild variant="outlineAccent" size="lg">
+                <a href="#contact">Contact me</a>
+              </Button>
+            </div>
           </div>
         </section>
 
@@ -325,7 +328,7 @@ function Index() {
         {/* Certifications */}
         <section className="border-t border-border/60 px-6 py-20">
           <div className="mx-auto max-w-6xl">
-            <SectionHeading eyebrow="04 — Credentials" title="Certifications &amp; Education" />
+              <SectionHeading eyebrow="04 — Credentials" title="Certifications &amp; Education" />
             <motion.div
               className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
               variants={staggerContainer}
@@ -379,7 +382,7 @@ function Index() {
                 whileInView="animate"
                 viewport={{ once: true, amount: 0.2 }}
               >
-                Open to SEO roles, freelance audits and collaborations.
+                I help websites get more traffic from Google. Open for freelance SEO work.
               </motion.p>
             </div>
             <ContactForm />
