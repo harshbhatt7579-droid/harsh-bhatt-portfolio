@@ -1,6 +1,6 @@
-# Portfolio update
+# Portfolio evidence pages
 
-- [ ] Update homepage titles, metadata, simple copy, and contact line.
-- [ ] Replace draft studies with the request-only notice and contact button.
-- [ ] Add the unlinked, noindex reusable case-study page and empty typed data source.
-- [ ] Verify metadata, copy, routes, and preview build.
+- [ ] Add standalone, unlinked pages for On-Page SEO, Off-Page SEO, Technical Audit, and combined Analysis & Reporting.
+- [ ] Use only supplied proof, preserving the original images and recording; leave unsupported categories without claims.
+- [ ] Keep the homepage design and address unchanged; ensure each shared page has no links to other proof pages.
+- [ ] Fix the reported preview error and verify page routes, metadata, evidence rendering, and build status.
