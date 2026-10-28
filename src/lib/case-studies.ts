@@ -45,6 +45,49 @@ export interface CaseStudy {
 }
 
 // Content is kept exactly as supplied in the Technical SEO Audit document.
+const auditImages = {
+  pagespeedDiagnostics: {
+    src: imgPagespeedDiagnostics.url,
+    alt: "PageSpeed Insights diagnostics list",
+    caption: "PageSpeed Insights: diagnostics",
+  },
+  pagespeedScores: {
+    src: imgPagespeedScores.url,
+    alt: "PageSpeed Insights desktop scores of 100 for Performance, Best Practices and SEO",
+    caption: "PageSpeed Insights: Desktop scores",
+  },
+  gscUrlInspection: {
+    src: imgGscUrlInspection.url,
+    alt: "Search Console URL Inspection showing indexing not allowed because of noindex",
+    caption: "Google Search Console: URL Inspection result",
+  },
+  richResultsBefore: {
+    src: imgRichResultsBefore.url,
+    alt: "Rich Results Test before the fix, with no items detected",
+    caption: "Rich Results Test: before — no items detected",
+  },
+  richResultsAfter: {
+    src: imgRichResultsAfter.url,
+    alt: "Rich Results Test after the fix, with 2 valid items detected",
+    caption: "Rich Results Test: after — 2 valid items detected",
+  },
+  blogThumbnail: {
+    src: imgBlogThumbnail.url,
+    alt: "Blog listing thumbnail for the client's campaign page",
+    caption: "Blog listing: thumbnail display",
+  },
+  cwvTrend: {
+    src: imgCwvTrend.url,
+    alt: "Core Web Vitals mobile trend moving from need improvement to good",
+    caption: "Search Console, Core Web Vitals (Mobile)",
+  },
+  cwvIssues: {
+    src: imgCwvIssues.url,
+    alt: "Core Web Vitals table listing the INP and LCP mobile issues",
+    caption: "Why URLs aren't considered good",
+  },
+} satisfies Record<string, CaseStudyImage>;
+
 const technicalSeoAudit: CaseStudy = {
   id: "technical-seo-audit",
   slug: "technical-seo-audit",
@@ -55,48 +98,16 @@ const technicalSeoAudit: CaseStudy = {
   images: [
     {
       src: auditCover.url,
-      alt: "PageSpeed Insights diagnostics for a page with render-blocking and legacy JavaScript",
+      alt: auditImages.pagespeedDiagnostics.alt,
     },
-    {
-      src: imgPagespeedDiagnostics.url,
-      alt: "PageSpeed Insights diagnostics list",
-      caption: "PageSpeed Insights: diagnostics",
-    },
-    {
-      src: imgPagespeedScores.url,
-      alt: "PageSpeed Insights desktop scores of 100 for Performance, Best Practices and SEO",
-      caption: "PageSpeed Insights: Desktop scores",
-    },
-    {
-      src: imgGscUrlInspection.url,
-      alt: "Search Console URL Inspection showing indexing not allowed because of noindex",
-      caption: "Google Search Console: URL Inspection result",
-    },
-    {
-      src: imgRichResultsBefore.url,
-      alt: "Rich Results Test before the fix, with no items detected",
-      caption: "Rich Results Test: before — no items detected",
-    },
-    {
-      src: imgRichResultsAfter.url,
-      alt: "Rich Results Test after the fix, with 2 valid items detected",
-      caption: "Rich Results Test: after — 2 valid items detected",
-    },
-    {
-      src: imgBlogThumbnail.url,
-      alt: "Blog listing thumbnail for the client's campaign page",
-      caption: "Blog listing: thumbnail display",
-    },
-    {
-      src: imgCwvTrend.url,
-      alt: "Core Web Vitals mobile trend moving from need improvement to good",
-      caption: "Search Console, Core Web Vitals (Mobile)",
-    },
-    {
-      src: imgCwvIssues.url,
-      alt: "Core Web Vitals table listing the INP and LCP mobile issues",
-      caption: "Why URLs aren't considered good",
-    },
+    auditImages.pagespeedDiagnostics,
+    auditImages.pagespeedScores,
+    auditImages.gscUrlInspection,
+    auditImages.richResultsBefore,
+    auditImages.richResultsAfter,
+    auditImages.blogThumbnail,
+    auditImages.cwvTrend,
+    auditImages.cwvIssues,
   ],
   intro:
     "Four real-world audits across site speed, Core Web Vitals, indexing and structured data. Each one shows what I found, how I found it, and what I recommended.",
@@ -109,7 +120,7 @@ const technicalSeoAudit: CaseStudy = {
         "On top of that, around 30 requests were being made as soon as the page loaded, most of which were for large images and various JS scripts.",
         "Enabling Gzip and minifying and combining files can make the page significantly lighter and faster.",
       ],
-      images: [images.pagespeedDiagnostics],
+      images: [auditImages.pagespeedDiagnostics],
     },
     {
       heading: "LCP: The main image was at the back of the line",
@@ -118,7 +129,7 @@ const technicalSeoAudit: CaseStudy = {
         "The browser was loading the large image that appears first on the page along with everything else.",
         'We told the developer team to add fetchpriority="high" to that image so it would be fetched first, allowing the page\'s main content to appear quickly.',
       ],
-      images: [images.pagespeedScores],
+      images: [auditImages.pagespeedScores],
     },
     {
       heading: "Noindex: The page was live but hidden from Google",
@@ -127,7 +138,7 @@ const technicalSeoAudit: CaseStudy = {
         'When the page was entered into Search Console\'s URL Inspection, both crawl and fetch were successful, but "Indexing allowed?" showed "No." The reason was the noindex in the robots meta tag.',
         "As long as this tag is there, the page won't appear in search. The correct course of action is to remove the tag and then request indexing again.",
       ],
-      images: [images.gscUrlInspection],
+      images: [auditImages.gscUrlInspection],
     },
     {
       heading: "Schema markup: Missing from essential pages",
@@ -136,7 +147,7 @@ const technicalSeoAudit: CaseStudy = {
         "I opened the source of the Home, About, and FAQ pages and found no schema on any of them. Schema tells Google what a page is about.",
         "It's best to add Organization markup to the Home and About pages, and FAQPage to the FAQ page, then check it with the Rich Results Test.",
       ],
-      images: [images.richResultsBefore, images.richResultsAfter],
+      images: [auditImages.richResultsBefore, auditImages.richResultsAfter],
     },
     {
       heading: "Thumbnail: Image cropping on the blog listing",
@@ -145,7 +156,7 @@ const technicalSeoAudit: CaseStudy = {
         "On the blog listing page, the thumbnail was getting cropped, which looked off and meant the full image wasn't visible. I reported this to the tech team and asked them to share the correct thumbnail dimensions (width and height in pixels), so that thumbnails could be created to that exact size.",
         "With the right dimensions in place, the image now displays in full without any cropping.",
       ],
-      images: [images.blogThumbnail],
+      images: [auditImages.blogThumbnail],
     },
     {
       heading: "Core Web Vitals: Issues with LCP and INP on mobile",
@@ -154,7 +165,7 @@ const technicalSeoAudit: CaseStudy = {
         "The Search Console Core Web Vitals report showed two issues on mobile: LCP (Largest Contentful Paint) over 2.5 seconds and INP (Interaction to Next Paint) over 200ms. I investigated why the main content was taking so long to load and where the delay was coming from in the page rendering after user interactions.",
         'Based on this, I provided suggestions for improvements to the tech team. After that, the number of URLs in the "Need improvement" category gradually decreased and they started to turn green.',
       ],
-      images: [images.cwvTrend, images.cwvIssues],
+      images: [auditImages.cwvTrend, auditImages.cwvIssues],
     },
   ],
 };
